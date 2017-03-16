@@ -12,7 +12,7 @@ Calculator
 
 It's time to build an on-screen calculator
 
-Build a function add() which takes two numbers and adds them together.
+Build a function add divs () which takes two numbers and adds them together.
 Build multiply, divide and subtract functions in a similar fashion.
 Build a grid of <div>s in the browser that are labeled with the numbers 0-9.
 Set up a listener so when the user clicks on one of these squares, it displays that number in the console log. This can be done by assigning a function to the onclick() property of the div (use this if you haven't been introduced to jQuery listeners before). It's okay to hard-code them in for now (e.g. onclick(function(){ console.log "1" }))
