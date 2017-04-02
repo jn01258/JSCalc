@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head><title>Practice sheet</title></head>
+<body>
+<script>
+// Build a function vowel_count() which takes a string and returns the number of vowels (AEIOUY).
+var initialString= prompt("Enter statement, and I'll return the number of vowels","");
+ var myRegExp=/[^aeiouy]+/i;
+ var vowelsArray=initialString.split(myRegExp);
+ document.write(vowelsArray.length);
 
-    <title>Finding the Vowels</title>
-  </head>
-  <body >
-
-    <p>Build a function vowel_count()
-      which takes a string and returns the
-      number of vowels (AEIOUY).</p>
-
-  <script src="vowels.js"></script>
-  </body>
+</script>
+</body>
 </html>
