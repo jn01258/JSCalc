@@ -4,10 +4,14 @@
 <body>
 <script>
 // Build a function vowel_count() which takes a string and returns the number of vowels (AEIOUY).
+function vowel_count(initialString){
+  var myRegExp=/[^aeiouy]+/i;
+  var vowelsArray=initialString.split(myRegExp);
+  document.write(vowelsArray.length-1);
+}
+
 var initialString= prompt("Enter statement, and I'll return the number of vowels","");
- var myRegExp=/[^aeiouy]+/i;
- var vowelsArray=initialString.split(myRegExp);
- document.write(vowelsArray.length);
+vowel_count(initialString);
 
 </script>
 </body>
