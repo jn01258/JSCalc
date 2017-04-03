@@ -1,0 +1,21 @@
+#calculator {
+ height:400px;
+ width: 400px;
+ margin: 10px auto;
+ border: 10px solid #c49ce5;
+
+}
+
+
+.row { display: flex;}
+
+.square {
+  display: inline-block;
+  margin: 0;
+  padding: 0px 5px;
+  height:80px;
+  width: 80px;
+  font-size: 56px;
+  text-align:center;
+  color: #c49ce5;
+}
