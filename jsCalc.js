@@ -1,3 +1,6 @@
+var squares = document.getElementsByClassName("square");
+
+
 function addition (a,b){
   return a+b;
 }
@@ -14,23 +17,23 @@ function division (a,b){
   return a/b;
 }
 
-// when the user clicks on one of these squares,
- // it displays that number in the console log.
- // This can be done by assigning a function to the onclick() property of the div
 
- var squares = document.getElementsByTagName("div");
+// Assign first number  pressed (to a variable or array)
+// 2. and youll also need to "save" which operation has been chosen
+// Once the equals sign is pressed, it should run a function which evaluates the
+//  expression by calling the simple functions you created earlier
+//   and outputting the result to the command line.
+//    It may take some practice to be able to pass the values from your "buttons"
+//    to your main calculator function. It's a bit tricky, but you can do it.
 
  function initiate() {
-     clickNumber();
-
+     firstNumber();
  }
 
- function clickNumber() {
+ function firstNumber() {
      for (var i = 0; i < squares.length; i++) {
      	squares[i].addEventListener("click", function() {
-         var toConsole = parseInt(this.getAttribute("number-value"));
-         console.log(toConsole);
-
+         console.log(Number(this.getAttribute("number-value")));
        });
      }
  }
