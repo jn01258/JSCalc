@@ -1,40 +1,141 @@
-var squares = document.getElementsByClassName("square");
+var equation = document.getElementById("equation");
+var number = document.getElementById("number");
+var square = document.getElementsByClassName("square");
+var elementsArray = [];
 
+clear();
 
-function addition (a,b){
-  return a+b;
+function clear() {
+    equation.innerHTML = "";
+    number.innerHTML = "";
+    elementsArray = [];
 }
 
-function subtraction (a,b){
-  return a-b;
+function clearN() {
+    number.innerHTML = "";
+};
+
+function equationAdd(a, b) {
+    elementsArray.push(a);
+    elementsArray.push(b);
+    equation.innerHTML += a;
+    equation.innerHTML += b;
 }
 
-function multiplication (a,b){
-  return a*b;
+function multiply(a, b) {
+    var c = parseInt(elementsArray[a]) * parseInt(elementsArray[b]);
+    elementsArray[a] = c.toString();
+    elementsArray.splice(a + 1, 2);
 }
 
-function division (a,b){
-  return a/b;
+function divide(a, b) {
+    var c = parseInt(elementsArray[a]) / parseInt(elementsArray[b]);
+    elementsArray[a] = c.toString();
+    elementsArray.splice(a + 1, 2);
+}
+
+function modulo(a, b) {
+    var c = parseInt(elementsArray[a]) % parseInt(elementsArray[b]);
+    elementsArray[a] = c.toString();
+    elementsArray.splice(a + 1, 2);
+}
+
+function add(a, b) {
+    var c = parseInt(elementsArray[a]) + parseInt(elementsArray[b]);
+    elementsArray[a] = c.toString();
+    elementsArray.splice(a + 1, 2);
+}
+
+function substract(a, b) {
+    var c = parseInt(elementsArray[a]) - parseInt(elementsArray[b]);
+    elementsArray[a] = c.toString();
+    elementsArray.splice(a + 1, 2);
 }
 
 
-// Assign first number  pressed (to a variable or array)
-// 2. and youll also need to "save" which operation has been chosen
-// Once the equals sign is pressed, it should run a function which evaluates the
-//  expression by calling the simple functions you created earlier
-//   and outputting the result to the command line.
-//    It may take some practice to be able to pass the values from your "buttons"
-//    to your main calculator function. It's a bit tricky, but you can do it.
+function calculate() {
+    for (var i = 0; i < elementsArray.length; i++) {
+        if (elementsArray[i] == "*") {
+            multiply(i - 1, i + 1);
+            i = i - 2;
+        } else if (elementsArray[i] == "/") {
+            divide(i - 1, i + 1);
+            i = i - 2;
+        } else if (elementsArray[i] == "%") {
+            modulo(i - 1, i + 1);
+            i = i - 2;
+        }
+    };
+    for (var i = 0; i < elementsArray.length; i++) {
+        if (elementsArray[i] == "+") {
+            add(i - 1, i + 1);
+            i = i - 2;
+        } else if (elementsArray[i] == "-") {
+            substract(i - 1, i + 1);
+            i = i - 2;
+        }
+    }
+};
 
- function initiate() {
-     firstNumber();
- }
+for (var i = 0; i < square.length; i++) {
+    square[i].addEventListener('click', function() {
+        switch (this.innerHTML) {
+            case "+":
+                {
+                    equationAdd(number.innerHTML, "+");
+                    clearN();
+                    break;
+                }
+            case "-":
+                {
+                    equationAdd(number.innerHTML, "-");
+                    clearN();
+                    break;
+                }
 
- function firstNumber() {
-     for (var i = 0; i < squares.length; i++) {
-     	squares[i].addEventListener("click", function() {
-         console.log(Number(this.getAttribute("id")));
-       });
-     }
- }
-initiate();
+            case "*":
+                {
+                    equationAdd(number.innerHTML, "*");
+                    clearN();
+                    break;
+                }
+            case "/":
+                {
+                    equationAdd(number.innerHTML, "/");
+                    clearN();
+                    break;
+                }
+
+            case "%":
+                {
+                    equationAdd(number.innerHTML, "%");
+                    clearN();
+                    break;
+                }
+            case "Clear":
+                {
+                    clear();
+                    break;
+
+                }
+
+            case "=":
+                {
+                    equationAdd(number.innerHTML, "=");
+                    elementsArray.pop();
+                    calculate();
+                    number.innerHTML = elementsArray[0];
+                    equation.innerHTML = "";
+                    elementsArray.pop();
+                    break;
+                }
+
+            default:
+                {
+                    number.innerHTML += this.innerHTML;
+                    break;
+                };
+
+        };
+    });
+}
