@@ -33,7 +33,7 @@ function division (a,b){
  function firstNumber() {
      for (var i = 0; i < squares.length; i++) {
      	squares[i].addEventListener("click", function() {
-         console.log(Number(this.getAttribute("number-value")));
+         console.log(Number(this.getAttribute("id")));
        });
      }
  }

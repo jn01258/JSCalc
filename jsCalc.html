@@ -2,44 +2,46 @@
 <html>
 <head>
   <link rel="stylesheet" href="jsCalc.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  
 
   <title>Andrea's Calculator</title>
 </head>
 <body>
 <div id="calculator">
   <div class="operators row">
-     <div class="square">+</div>
-     <div class="square">-</div>
-     <div class="square">*</div>
-     <div class="square">/</div>
-     <div class="square">=</div>
-     <div class="square">C</div>
+     <div id ="addition" class="square">+</div>
+     <div id ="subtraction" class="square">-</div>
+     <div id ="multiplication" class="square">*</div>
+     <div id ="division" class="square">/</div>
+     <div id ="equal" class="square">=</div>
+     <div id ="clear" class="square">C</div>
 
   </div>
   <div class="row">
-     <div class="square" number-value="7">7</div>
-     <div class="square" number-value="8">8</div>
-     <div class="square" number-value="9">9</div>
+     <div id ="7" class="square" >7</div>
+     <div id ="8" class="square" >8</div>
+     <div id ="9" class="square">9</div>
 
   </div>
  <div class="row">
-      <div class="square" number-value="4">4</div>
-     <div class="square" number-value="5">5</div>
-     <div class="square" number-value="6">6</div>
+      <div id ="4" class="square">4</div>
+     <div id ="5" class="square" >5</div>
+     <div id ="6" class="square">6</div>
 
  </div>
  <div class="row">
-     <div class="square" number-value="1">1</div>
-     <div class="square" number-value="2">2</div>
-     <div class="square" number-value="3">3</div>
+     <div id ="1" class="square" >1</div>
+     <div id ="2" class="square" >2</div>
+     <div id ="3" class="square" >3</div>
 
 </div>
 <div class="row">
-  <div class="square" number-value="0">0</div>
+  <div id ="0" class="square" >0</div>
 </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <script type="text/javascript" src="jsCalc.js"></script>
 </body>
 </html>
